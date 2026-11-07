@@ -1,0 +1,5 @@
+pandas>=2.0
+python-dotenv>=1.0
+openai>=1.0          # optional: only for LLM mode
+streamlit>=1.30
+gdown>=5.0           # downloads the Spider dataset

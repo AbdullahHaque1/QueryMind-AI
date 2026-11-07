@@ -1,0 +1,1113 @@
+{
+  "environment": {
+    "python": "3.12.3",
+    "sqlite": "3.45.1",
+    "platform": "Linux-6.18.44-fc-v242-x86_64-with-glibc2.39",
+    "cpu_count": 1
+  },
+  "database": {
+    "tables": [
+      "customers",
+      "products",
+      "orders",
+      "order_items"
+    ],
+    "rows": {
+      "customers": 30,
+      "products": 12,
+      "orders": 80,
+      "order_items": 200
+    }
+  },
+  "safety": {
+    "n_attacks": 42,
+    "configs": {
+      "no protection": {
+        "rejected": 0,
+        "errored": 12,
+        "executed": 30,
+        "modified": 22
+      },
+      "L1 (v1)": {
+        "rejected": 34,
+        "errored": 3,
+        "executed": 5,
+        "modified": 5
+      },
+      "L1 (v2)": {
+        "rejected": 40,
+        "errored": 2,
+        "executed": 0,
+        "modified": 0
+      },
+      "L2 read-only": {
+        "rejected": 0,
+        "errored": 35,
+        "executed": 7,
+        "modified": 0
+      },
+      "L3 authorizer": {
+        "rejected": 0,
+        "errored": 41,
+        "executed": 1,
+        "modified": 0
+      },
+      "L2+L3": {
+        "rejected": 0,
+        "errored": 41,
+        "executed": 1,
+        "modified": 0
+      },
+      "full (v2+L2+L3)": {
+        "rejected": 40,
+        "errored": 2,
+        "executed": 0,
+        "modified": 0
+      }
+    },
+    "by_category": {
+      "no protection": {
+        "stacked": {
+          "errored": 5,
+          "modified": 0
+        },
+        "ddl": {
+          "executed": 5,
+          "modified": 5
+        },
+        "dml": {
+          "executed": 5,
+          "modified": 5
+        },
+        "cte-write": {
+          "executed": 5,
+          "modified": 5
+        },
+        "admin": {
+          "executed": 8,
+          "modified": 1,
+          "errored": 1
+        },
+        "transaction": {
+          "errored": 2,
+          "modified": 0,
+          "executed": 1
+        },
+        "obfuscation": {
+          "executed": 3,
+          "modified": 3,
+          "errored": 1
+        },
+        "quote-trick": {
+          "executed": 3,
+          "modified": 3,
+          "errored": 1
+        },
+        "function": {
+          "errored": 2,
+          "modified": 0
+        }
+      },
+      "L1 (v1)": {
+        "stacked": {
+          "rejected": 5,
+          "modified": 0
+        },
+        "ddl": {
+          "rejected": 5,
+          "modified": 0
+        },
+        "dml": {
+          "rejected": 5,
+          "modified": 0
+        },
+        "cte-write": {
+          "rejected": 3,
+          "modified": 2,
+          "executed": 2
+        },
+        "admin": {
+          "rejected": 9,
+          "modified": 0
+        },
+        "transaction": {
+          "rejected": 3,
+          "modified": 0
+        },
+        "obfuscation": {
+          "rejected": 4,
+          "modified": 0
+        },
+        "quote-trick": {
+          "executed": 3,
+          "modified": 3,
+          "errored": 1
+        },
+        "function": {
+          "errored": 2,
+          "modified": 0
+        }
+      },
+      "L1 (v2)": {
+        "stacked": {
+          "rejected": 5,
+          "modified": 0
+        },
+        "ddl": {
+          "rejected": 5,
+          "modified": 0
+        },
+        "dml": {
+          "rejected": 5,
+          "modified": 0
+        },
+        "cte-write": {
+          "rejected": 5,
+          "modified": 0
+        },
+        "admin": {
+          "rejected": 9,
+          "modified": 0
+        },
+        "transaction": {
+          "rejected": 3,
+          "modified": 0
+        },
+        "obfuscation": {
+          "rejected": 4,
+          "modified": 0
+        },
+        "quote-trick": {
+          "rejected": 4,
+          "modified": 0
+        },
+        "function": {
+          "errored": 2,
+          "modified": 0
+        }
+      },
+      "L2 read-only": {
+        "stacked": {
+          "errored": 5,
+          "modified": 0
+        },
+        "ddl": {
+          "errored": 5,
+          "modified": 0
+        },
+        "dml": {
+          "errored": 5,
+          "modified": 0
+        },
+        "cte-write": {
+          "errored": 5,
+          "modified": 0
+        },
+        "admin": {
+          "executed": 6,
+          "modified": 0,
+          "errored": 3
+        },
+        "transaction": {
+          "errored": 2,
+          "modified": 0,
+          "executed": 1
+        },
+        "obfuscation": {
+          "errored": 4,
+          "modified": 0
+        },
+        "quote-trick": {
+          "errored": 4,
+          "modified": 0
+        },
+        "function": {
+          "errored": 2,
+          "modified": 0
+        }
+      },
+      "L3 authorizer": {
+        "stacked": {
+          "errored": 5,
+          "modified": 0
+        },
+        "ddl": {
+          "errored": 5,
+          "modified": 0
+        },
+        "dml": {
+          "errored": 5,
+          "modified": 0
+        },
+        "cte-write": {
+          "errored": 5,
+          "modified": 0
+        },
+        "admin": {
+          "errored": 8,
+          "modified": 0,
+          "executed": 1
+        },
+        "transaction": {
+          "errored": 3,
+          "modified": 0
+        },
+        "obfuscation": {
+          "errored": 4,
+          "modified": 0
+        },
+        "quote-trick": {
+          "errored": 4,
+          "modified": 0
+        },
+        "function": {
+          "errored": 2,
+          "modified": 0
+        }
+      },
+      "L2+L3": {
+        "stacked": {
+          "errored": 5,
+          "modified": 0
+        },
+        "ddl": {
+          "errored": 5,
+          "modified": 0
+        },
+        "dml": {
+          "errored": 5,
+          "modified": 0
+        },
+        "cte-write": {
+          "errored": 5,
+          "modified": 0
+        },
+        "admin": {
+          "errored": 8,
+          "modified": 0,
+          "executed": 1
+        },
+        "transaction": {
+          "errored": 3,
+          "modified": 0
+        },
+        "obfuscation": {
+          "errored": 4,
+          "modified": 0
+        },
+        "quote-trick": {
+          "errored": 4,
+          "modified": 0
+        },
+        "function": {
+          "errored": 2,
+          "modified": 0
+        }
+      },
+      "full (v2+L2+L3)": {
+        "stacked": {
+          "rejected": 5,
+          "modified": 0
+        },
+        "ddl": {
+          "rejected": 5,
+          "modified": 0
+        },
+        "dml": {
+          "rejected": 5,
+          "modified": 0
+        },
+        "cte-write": {
+          "rejected": 5,
+          "modified": 0
+        },
+        "admin": {
+          "rejected": 9,
+          "modified": 0
+        },
+        "transaction": {
+          "rejected": 3,
+          "modified": 0
+        },
+        "obfuscation": {
+          "rejected": 4,
+          "modified": 0
+        },
+        "quote-trick": {
+          "rejected": 4,
+          "modified": 0
+        },
+        "function": {
+          "errored": 2,
+          "modified": 0
+        }
+      }
+    },
+    "admitted_by_l1": {
+      "v1": [
+        {
+          "category": "cte-write",
+          "sql": "WITH x AS (SELECT 77 AS id, 'zz' AS name, 'Books' AS category, 1.0 AS price) REPLACE INTO products(id, name, category, price) SELECT id, name, category, price FROM x"
+        },
+        {
+          "category": "cte-write",
+          "sql": "WITH x AS (SELECT 1 AS id, 'zz' AS name, 'Books' AS category, 1.0 AS price) REPLACE INTO products(id, name, category, price) SELECT id, name, category, price FROM x"
+        },
+        {
+          "category": "quote-trick",
+          "sql": "WITH x AS (SELECT 1 AS [a']) DELETE FROM orders RETURNING id AS [']"
+        },
+        {
+          "category": "quote-trick",
+          "sql": "WITH x AS (SELECT 1 AS `a'`) DELETE FROM orders RETURNING id AS `'`"
+        },
+        {
+          "category": "quote-trick",
+          "sql": "WITH x AS (SELECT 1 AS [a']) UPDATE orders SET status = 'hacked' RETURNING id AS [']"
+        },
+        {
+          "category": "quote-trick",
+          "sql": "SELECT [x'] FROM orders; DROP TABLE orders; SELECT ['] FROM orders"
+        },
+        {
+          "category": "function",
+          "sql": "SELECT load_extension('libevil')"
+        },
+        {
+          "category": "function",
+          "sql": "SELECT readfile('/etc/passwd')"
+        }
+      ],
+      "v2": [
+        {
+          "category": "function",
+          "sql": "SELECT load_extension('libevil')"
+        },
+        {
+          "category": "function",
+          "sql": "SELECT readfile('/etc/passwd')"
+        }
+      ]
+    },
+    "categories": [
+      "admin",
+      "cte-write",
+      "ddl",
+      "dml",
+      "function",
+      "obfuscation",
+      "quote-trick",
+      "stacked",
+      "transaction"
+    ],
+    "category_sizes": {
+      "stacked": 5,
+      "ddl": 5,
+      "dml": 5,
+      "cte-write": 5,
+      "admin": 9,
+      "transaction": 3,
+      "obfuscation": 4,
+      "quote-trick": 4,
+      "function": 2
+    }
+  },
+  "benign": {
+    "n_benign": 33,
+    "validators": {
+      "v1": {
+        "accepted": 31,
+        "same_result": 30,
+        "problems": [
+          {
+            "category": "in-literal",
+            "sql": "SELECT * FROM products WHERE name LIKE '%--%'",
+            "why": "error: unrecognized token: \"'%\""
+          },
+          {
+            "category": "collision",
+            "sql": "SELECT name AS release FROM products LIMIT 3",
+            "why": "rejected: Forbidden keyword: RELEASE"
+          },
+          {
+            "category": "collision",
+            "sql": "SELECT 1 AS begin",
+            "why": "rejected: Forbidden keyword: BEGIN"
+          }
+        ]
+      },
+      "v2": {
+        "accepted": 31,
+        "same_result": 31,
+        "problems": [
+          {
+            "category": "collision",
+            "sql": "SELECT name AS release FROM products LIMIT 3",
+            "why": "rejected: Forbidden keyword: RELEASE"
+          },
+          {
+            "category": "collision",
+            "sql": "SELECT 1 AS begin",
+            "why": "rejected: Forbidden keyword: BEGIN"
+          }
+        ]
+      },
+      "full": {
+        "accepted": 31,
+        "same_result": 31,
+        "problems": [
+          {
+            "category": "collision",
+            "sql": "SELECT name AS release FROM products LIMIT 3",
+            "why": "rejected: Forbidden keyword: RELEASE"
+          },
+          {
+            "category": "collision",
+            "sql": "SELECT 1 AS begin",
+            "why": "rejected: Forbidden keyword: BEGIN"
+          }
+        ]
+      }
+    }
+  },
+  "limits": {
+    "timeout": [
+      {
+        "query": "recursive CTE",
+        "limit_s": 0.25,
+        "stopped": true,
+        "mean_s": 0.25,
+        "max_s": 0.25
+      },
+      {
+        "query": "recursive CTE",
+        "limit_s": 0.5,
+        "stopped": true,
+        "mean_s": 0.5,
+        "max_s": 0.5
+      },
+      {
+        "query": "recursive CTE",
+        "limit_s": 1.0,
+        "stopped": true,
+        "mean_s": 1.0,
+        "max_s": 1.0
+      },
+      {
+        "query": "recursive CTE",
+        "limit_s": 2.0,
+        "stopped": true,
+        "mean_s": 2.0,
+        "max_s": 2.0
+      },
+      {
+        "query": "four-way cross join",
+        "limit_s": 0.25,
+        "stopped": true,
+        "mean_s": 0.25,
+        "max_s": 0.25
+      },
+      {
+        "query": "four-way cross join",
+        "limit_s": 0.5,
+        "stopped": true,
+        "mean_s": 0.5,
+        "max_s": 0.5
+      },
+      {
+        "query": "four-way cross join",
+        "limit_s": 1.0,
+        "stopped": true,
+        "mean_s": 1.0,
+        "max_s": 1.0
+      },
+      {
+        "query": "four-way cross join",
+        "limit_s": 2.0,
+        "stopped": true,
+        "mean_s": 2.0,
+        "max_s": 2.0
+      }
+    ],
+    "row_cap": [
+      {
+        "cap": 10,
+        "rows": 10,
+        "truncated": true,
+        "median_ms": 0.141
+      },
+      {
+        "cap": 50,
+        "rows": 50,
+        "truncated": true,
+        "median_ms": 0.164
+      },
+      {
+        "cap": 200,
+        "rows": 200,
+        "truncated": true,
+        "median_ms": 0.335
+      },
+      {
+        "cap": 1000,
+        "rows": 1000,
+        "truncated": true,
+        "median_ms": 1.267
+      }
+    ],
+    "row_cap_unguarded": {
+      "rows": 40000,
+      "ms": 49.068
+    }
+  },
+  "matcher": {
+    "default_threshold": 0.55,
+    "inscope": [
+      {
+        "gold": 0,
+        "difficulty": "easy",
+        "text": "How many customers do we have?",
+        "pick": 0,
+        "score": 0.5943
+      },
+      {
+        "gold": 0,
+        "difficulty": "medium",
+        "text": "Count the customers",
+        "pick": 0,
+        "score": 0.3214
+      },
+      {
+        "gold": 0,
+        "difficulty": "hard",
+        "text": "What is the size of our customer base?",
+        "pick": 6,
+        "score": 0.4141
+      },
+      {
+        "gold": 1,
+        "difficulty": "easy",
+        "text": "How many orders per status?",
+        "pick": 1,
+        "score": 0.6864
+      },
+      {
+        "gold": 1,
+        "difficulty": "medium",
+        "text": "Number of orders for every status",
+        "pick": 1,
+        "score": 0.4629
+      },
+      {
+        "gold": 1,
+        "difficulty": "hard",
+        "text": "Break the orders down by their state",
+        "pick": 1,
+        "score": 0.3197
+      },
+      {
+        "gold": 2,
+        "difficulty": "easy",
+        "text": "Total revenue per category",
+        "pick": 2,
+        "score": 0.751
+      },
+      {
+        "gold": 2,
+        "difficulty": "medium",
+        "text": "Revenue for each product category in total",
+        "pick": 11,
+        "score": 0.4883
+      },
+      {
+        "gold": 2,
+        "difficulty": "hard",
+        "text": "How much money did each type of product bring in?",
+        "pick": 7,
+        "score": 0.2902
+      },
+      {
+        "gold": 3,
+        "difficulty": "easy",
+        "text": "Top 3 customers by spend",
+        "pick": 3,
+        "score": 0.8611
+      },
+      {
+        "gold": 3,
+        "difficulty": "medium",
+        "text": "The three customers who spent the most",
+        "pick": 3,
+        "score": 0.3249
+      },
+      {
+        "gold": 3,
+        "difficulty": "hard",
+        "text": "Who are our biggest three buyers?",
+        "pick": 0,
+        "score": 0.2435
+      },
+      {
+        "gold": 4,
+        "difficulty": "easy",
+        "text": "Which five products earned the most revenue?",
+        "pick": 4,
+        "score": 0.8456
+      },
+      {
+        "gold": 4,
+        "difficulty": "medium",
+        "text": "Top 5 products by revenue",
+        "pick": 4,
+        "score": 0.4697
+      },
+      {
+        "gold": 4,
+        "difficulty": "hard",
+        "text": "Name the best-selling five items in terms of money made",
+        "pick": 8,
+        "score": 0.1845
+      },
+      {
+        "gold": 5,
+        "difficulty": "easy",
+        "text": "Which customers are from Sri Lanka?",
+        "pick": 5,
+        "score": 0.6324
+      },
+      {
+        "gold": 5,
+        "difficulty": "medium",
+        "text": "Customers living in Sri Lanka",
+        "pick": 5,
+        "score": 0.5101
+      },
+      {
+        "gold": 5,
+        "difficulty": "hard",
+        "text": "Give me the people who signed up from Sri Lanka",
+        "pick": 5,
+        "score": 0.3654
+      },
+      {
+        "gold": 6,
+        "difficulty": "easy",
+        "text": "What is the average price of a product?",
+        "pick": 6,
+        "score": 0.7586
+      },
+      {
+        "gold": 6,
+        "difficulty": "medium",
+        "text": "Average product price",
+        "pick": 6,
+        "score": 0.6318
+      },
+      {
+        "gold": 6,
+        "difficulty": "hard",
+        "text": "On average, how expensive are our items?",
+        "pick": 0,
+        "score": 0.3029
+      },
+      {
+        "gold": 7,
+        "difficulty": "easy",
+        "text": "How many orders were made in 2025?",
+        "pick": 7,
+        "score": 0.8321
+      },
+      {
+        "gold": 7,
+        "difficulty": "medium",
+        "text": "Orders placed during 2025, how many",
+        "pick": 7,
+        "score": 0.6083
+      },
+      {
+        "gold": 7,
+        "difficulty": "hard",
+        "text": "How busy was 2025 in terms of purchases?",
+        "pick": 7,
+        "score": 0.3092
+      },
+      {
+        "gold": 8,
+        "difficulty": "easy",
+        "text": "Show me the most expensive product",
+        "pick": 8,
+        "score": 0.8936
+      },
+      {
+        "gold": 8,
+        "difficulty": "medium",
+        "text": "Which product has the highest price?",
+        "pick": 6,
+        "score": 0.4381
+      },
+      {
+        "gold": 8,
+        "difficulty": "hard",
+        "text": "What is the priciest thing we sell?",
+        "pick": 6,
+        "score": 0.4109
+      },
+      {
+        "gold": 9,
+        "difficulty": "easy",
+        "text": "How many customers are there per country?",
+        "pick": 0,
+        "score": 0.7714
+      },
+      {
+        "gold": 9,
+        "difficulty": "medium",
+        "text": "Customer count by country",
+        "pick": 9,
+        "score": 0.3661
+      },
+      {
+        "gold": 9,
+        "difficulty": "hard",
+        "text": "Where do our customers come from, and how many from each place?",
+        "pick": 0,
+        "score": 0.311
+      },
+      {
+        "gold": 10,
+        "difficulty": "easy",
+        "text": "Which customers never placed an order?",
+        "pick": 10,
+        "score": 0.8977
+      },
+      {
+        "gold": 10,
+        "difficulty": "medium",
+        "text": "Customers without any orders",
+        "pick": 10,
+        "score": 0.3317
+      },
+      {
+        "gold": 10,
+        "difficulty": "hard",
+        "text": "Who signed up but has never bought anything?",
+        "pick": 10,
+        "score": 0.2426
+      },
+      {
+        "gold": 11,
+        "difficulty": "easy",
+        "text": "What is the total quantity sold in each product category?",
+        "pick": 11,
+        "score": 0.8874
+      },
+      {
+        "gold": 11,
+        "difficulty": "medium",
+        "text": "Quantity sold per category",
+        "pick": 11,
+        "score": 0.434
+      },
+      {
+        "gold": 11,
+        "difficulty": "hard",
+        "text": "How many units left the shop for every kind of product?",
+        "pick": 0,
+        "score": 0.3214
+      }
+    ],
+    "oos": [
+      {
+        "kind": "near",
+        "text": "How many orders were cancelled?",
+        "pick": 7,
+        "score": 0.6381
+      },
+      {
+        "kind": "near",
+        "text": "List the names of products in the Books category",
+        "pick": 4,
+        "score": 0.3241
+      },
+      {
+        "kind": "near",
+        "text": "Which city has the most customers?",
+        "pick": 4,
+        "score": 0.4567
+      },
+      {
+        "kind": "near",
+        "text": "What is the cheapest product in each category?",
+        "pick": 11,
+        "score": 0.5577
+      },
+      {
+        "kind": "near",
+        "text": "Show orders placed by customer 12",
+        "pick": 7,
+        "score": 0.3808
+      },
+      {
+        "kind": "near",
+        "text": "How many products are there in total?",
+        "pick": 0,
+        "score": 0.5833
+      },
+      {
+        "kind": "off-topic",
+        "text": "What is the meaning of life?",
+        "pick": 6,
+        "score": 0.4409
+      },
+      {
+        "kind": "off-topic",
+        "text": "Write me a poem about autumn",
+        "pick": 1,
+        "score": 0.2
+      },
+      {
+        "kind": "off-topic",
+        "text": "Who won the cricket match yesterday?",
+        "pick": 6,
+        "score": 0.2455
+      },
+      {
+        "kind": "off-topic",
+        "text": "Translate good morning into French",
+        "pick": 6,
+        "score": 0.1618
+      },
+      {
+        "kind": "off-topic",
+        "text": "How do I reset my router?",
+        "pick": 0,
+        "score": 0.2722
+      },
+      {
+        "kind": "off-topic",
+        "text": "Tell me a joke",
+        "pick": 5,
+        "score": 0.1915
+      }
+    ],
+    "sweep": [
+      {
+        "threshold": 0.2,
+        "correct": 25,
+        "wrong": 10,
+        "missed": 1,
+        "oos_accepted": 10,
+        "oos_total": 12,
+        "inscope_total": 36
+      },
+      {
+        "threshold": 0.25,
+        "correct": 24,
+        "wrong": 9,
+        "missed": 3,
+        "oos_accepted": 8,
+        "oos_total": 12,
+        "inscope_total": 36
+      },
+      {
+        "threshold": 0.3,
+        "correct": 24,
+        "wrong": 8,
+        "missed": 4,
+        "oos_accepted": 7,
+        "oos_total": 12,
+        "inscope_total": 36
+      },
+      {
+        "threshold": 0.35,
+        "correct": 19,
+        "wrong": 5,
+        "missed": 12,
+        "oos_accepted": 6,
+        "oos_total": 12,
+        "inscope_total": 36
+      },
+      {
+        "threshold": 0.4,
+        "correct": 17,
+        "wrong": 5,
+        "missed": 14,
+        "oos_accepted": 5,
+        "oos_total": 12,
+        "inscope_total": 36
+      },
+      {
+        "threshold": 0.45,
+        "correct": 16,
+        "wrong": 2,
+        "missed": 18,
+        "oos_accepted": 4,
+        "oos_total": 12,
+        "inscope_total": 36
+      },
+      {
+        "threshold": 0.5,
+        "correct": 14,
+        "wrong": 1,
+        "missed": 21,
+        "oos_accepted": 3,
+        "oos_total": 12,
+        "inscope_total": 36
+      },
+      {
+        "threshold": 0.55,
+        "correct": 13,
+        "wrong": 1,
+        "missed": 22,
+        "oos_accepted": 3,
+        "oos_total": 12,
+        "inscope_total": 36
+      },
+      {
+        "threshold": 0.6,
+        "correct": 12,
+        "wrong": 1,
+        "missed": 23,
+        "oos_accepted": 1,
+        "oos_total": 12,
+        "inscope_total": 36
+      },
+      {
+        "threshold": 0.65,
+        "correct": 9,
+        "wrong": 1,
+        "missed": 26,
+        "oos_accepted": 0,
+        "oos_total": 12,
+        "inscope_total": 36
+      },
+      {
+        "threshold": 0.7,
+        "correct": 8,
+        "wrong": 1,
+        "missed": 27,
+        "oos_accepted": 0,
+        "oos_total": 12,
+        "inscope_total": 36
+      },
+      {
+        "threshold": 0.75,
+        "correct": 8,
+        "wrong": 1,
+        "missed": 27,
+        "oos_accepted": 0,
+        "oos_total": 12,
+        "inscope_total": 36
+      },
+      {
+        "threshold": 0.8,
+        "correct": 6,
+        "wrong": 0,
+        "missed": 30,
+        "oos_accepted": 0,
+        "oos_total": 12,
+        "inscope_total": 36
+      }
+    ],
+    "by_difficulty": {
+      "easy": {
+        "n": 12,
+        "correct": 11,
+        "wrong": 1,
+        "missed": 0,
+        "mean_score": 0.784
+      },
+      "medium": {
+        "n": 12,
+        "correct": 2,
+        "wrong": 0,
+        "missed": 10,
+        "mean_score": 0.449
+      },
+      "hard": {
+        "n": 12,
+        "correct": 0,
+        "wrong": 0,
+        "missed": 12,
+        "mean_score": 0.31
+      }
+    },
+    "bank_size": 12,
+    "bank_sql_runs": 12,
+    "sweep_matches_demo_sql": "36/36"
+  },
+  "latency": {
+    "queries": 31,
+    "repetitions": 30,
+    "validate_us": {
+      "mean": 17.111,
+      "median": 16.28,
+      "p95": 31.062
+    },
+    "guarded_ms": {
+      "mean": 0.127,
+      "median": 0.118,
+      "p95": 0.217
+    },
+    "raw_ms": {
+      "mean": 0.103,
+      "median": 0.097,
+      "p95": 0.172
+    }
+  },
+  "prompt": {
+    "schema_chars": 511,
+    "rows": [
+      {
+        "k": 0,
+        "mean_chars": 857,
+        "min_chars": 839,
+        "max_chars": 883,
+        "approx_tokens": 214
+      },
+      {
+        "k": 1,
+        "mean_chars": 1003,
+        "min_chars": 936,
+        "max_chars": 1156,
+        "approx_tokens": 251
+      },
+      {
+        "k": 3,
+        "mean_chars": 1287,
+        "min_chars": 1147,
+        "max_chars": 1569,
+        "approx_tokens": 322
+      },
+      {
+        "k": 5,
+        "mean_chars": 1572,
+        "min_chars": 1381,
+        "max_chars": 1868,
+        "approx_tokens": 393
+      },
+      {
+        "k": 10,
+        "mean_chars": 2295,
+        "min_chars": 2167,
+        "max_chars": 2427,
+        "approx_tokens": 574
+      }
+    ],
+    "note": "approx_tokens = characters / 4, a rough rule of thumb for English text and SQL"
+  },
+  "evaluator": {
+    "equivalent_pairs": 12,
+    "equivalent_ok": 12,
+    "different_pairs": 12,
+    "different_ok": 11,
+    "disagreements": [
+      {
+        "a": "SELECT price FROM products",
+        "b": "SELECT price + 0.00001 FROM products",
+        "expected_match": false,
+        "evaluator_said_match": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "database": "concert_singer",
+  "guard": {
+    "none": {
+      "executed": 21,
+      "modified": 17
+    },
+    "L1_static": {
+      "executed": 0,
+      "modified": 0
+    },
+    "L2_readonly": {
+      "executed": 4,
+      "modified": 0
+    },
+    "L3_authorizer": {
+      "executed": 0,
+      "modified": 0
+    },
+    "L2_L3": {
+      "executed": 0,
+      "modified": 0
+    },
+    "all_four_layers": {
+      "executed": 0,
+      "modified": 0
+    },
+    "n_attacks": 24,
+    "categories": {
+      "stacked": 2,
+      "ddl": 5,
+      "dml": 4,
+      "meta": 4,
+      "txn": 2,
+      "obfuscated": 6,
+      "function": 1
+    }
+  },
+  "gold": {
+    "n_gold": 7,
+    "ran_ok": 7,
+    "blocked_by_guard": 0,
+    "sql_errors": 0
+  },
+  "latency": {
+    "runs": 700,
+    "query_ms_mean": 0.145,
+    "query_ms_median": 0.122,
+    "query_ms_p95": 0.32,
+    "schema_ms_mean": 0.094
+  },
+  "limits": {
+    "row_cap": 200,
+    "rows_returned": 200,
+    "truncated": true,
+    "row_cap_query_ms": 7.0,
+    "timeout_set_s": 1.0,
+    "heavy_query_stopped": true,
+    "heavy_query_elapsed_s": 1.0
+  },
+  "demo": {
+    "n_examples": 5,
+    "variants": {
+      "exact": {
+        "n": 5,
+        "correct": 5,
+        "miss": 0,
+        "wrong": 0
+      },
+      "lower_nopunct": {
+        "n": 5,
+        "correct": 5,
+        "miss": 0,
+        "wrong": 0
+      },
+      "prefix_please": {
+        "n": 5,
+        "correct": 5,
+        "miss": 0,
+        "wrong": 0
+      },
+      "suffix_db": {
+        "n": 5,
+        "correct": 5,
+        "miss": 0,
+        "wrong": 0
+      },
+      "drop_word": {
+        "n": 3,
+        "correct": 3,
+        "miss": 0,
+        "wrong": 0
+      }
+    },
+    "off_topic_total": 10,
+    "off_topic_rejected": 10
+  },
+  "non_blank_lines": {
+    "__init__.py": 0,
+    "app.py": 37,
+    "build_db.py": 134,
+    "cli.py": 33,
+    "config.py": 25,
+    "db.py": 105,
+    "evaluate.py": 40,
+    "nl2sql.py": 80
+  }
+}
